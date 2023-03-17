@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "extends": ["@react-native-community"],
+    "rules": {
+        "quotes": ["warn", "double", { "avoidEscape": true }],
+        "prettier/prettier": [
+            "warn",
+            {
+                "singleQuote": false,
+                "bracketSpacing": true,
+                "arrowParens": "always"
+            }
+        ],
+        "no-unused-vars": "warn",
+        "react-hooks/exhaustive-deps": "off",
+        "@typescript-eslint/no-unused-vars": "warn"
+    }
+}
