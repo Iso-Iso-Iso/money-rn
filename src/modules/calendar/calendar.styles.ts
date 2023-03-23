@@ -2,8 +2,11 @@ import { StyleSheet } from "react-native";
 import create = StyleSheet.create;
 import { COLORS, FONT_FAMILY, INDENT, SIZING } from "../../constants/styles";
 
-export const calendarWrapper = create({
+export const calendarStyles = create({
     wrapper: {
+        marginBottom: INDENT.SMALL,
+    },
+    dateWrapper: {
         flexDirection: "row",
         marginBottom: INDENT.MEDIUM,
     },
@@ -13,5 +16,8 @@ export const calendarWrapper = create({
         fontFamily: FONT_FAMILY,
         fontWeight: "bold",
         color: COLORS.TEXT_COLOR,
+    },
+    buttonIcon: {
+        marginRight: 5,
     },
 });

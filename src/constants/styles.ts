@@ -3,11 +3,14 @@ export const COLORS = {
     GRAY: "#4f4f4f",
     GRAY_LIGHT: "#cccccc",
     BLUE: "#202f70",
-    BLUE_LIGHT: "#373ca8",
+    BLUE_LIGHT: "#507cda",
     TEXT_COLOR: "#333333",
     TEXT_COLOR_NEGATIVE: "#ffffff",
     BACKGROUND: "#f3eeee",
     DARK_BLUE: "#14182f",
+    BLUE_OPACITY:"rgba(173,199,255,0.52)",
+    GREEN:"#049b22",
+    YELLOW:"#F2B448"
 } as const;
 
 export const SIZING = {

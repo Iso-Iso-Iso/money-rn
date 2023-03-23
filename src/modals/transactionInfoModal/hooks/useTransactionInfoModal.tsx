@@ -1,5 +1,5 @@
 import { useModal } from "../../../hooks/modal/useModal";
-import TransactionInfoModal from "../components/TransactionInfoModal";
+import TransactionInfoModal from "../modal/TransactionInfoModal";
 import React from "react";
 
 export const useTransactionInfoModal = () => {

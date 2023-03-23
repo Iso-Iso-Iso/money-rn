@@ -1,18 +1,21 @@
 import React, { useMemo } from "react";
 import CalendarItem from "./components/calendarItem";
 import { View } from "react-native";
-import { calendarWrapper } from "./calendar.styles";
+import { calendarStyles } from "./calendar.styles";
 import { SectionHeader } from "../../components/sectionHeader";
 import moment from "moment";
 import { useCurrentDate } from "../../hooks/helpers/dates";
+import { ExpandButton } from "../../components/buttons";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import { COLORS } from "../../constants/styles";
 
 const Calendar = () => {
     const todayDate = useCurrentDate();
     const arr = [1, 2, 3, 4, 5];
     return (
-        <View>
+        <View style={calendarStyles.wrapper}>
             <SectionHeader>{todayDate}</SectionHeader>
-            <View style={calendarWrapper.wrapper}>
+            <View style={calendarStyles.dateWrapper}>
                 {arr.map((el, index) => (
                     <CalendarItem
                         key={el}
@@ -23,6 +26,17 @@ const Calendar = () => {
                     />
                 ))}
             </View>
+            <ExpandButton
+                icon={
+                    <Icon
+                        name="calendar-today"
+                        size={20}
+                        color={COLORS.BLUE_LIGHT}
+                        style={calendarStyles.buttonIcon}
+                    />
+                }>
+                View calendar
+            </ExpandButton>
         </View>
     );
 };
