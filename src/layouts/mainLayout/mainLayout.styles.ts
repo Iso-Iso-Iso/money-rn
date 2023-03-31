@@ -7,6 +7,6 @@ export const mainLayout = StyleSheet.create({
         paddingTop: (StatusBar?.currentHeight || 0) + INDENT.MEDIUM,
         paddingBottom: INDENT.MEDIUM,
         backgroundColor: COLORS.BACKGROUND,
-        minHeight: Dimensions.get("screen").height,
+        flex: 1,
     },
 });

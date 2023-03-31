@@ -8,9 +8,13 @@ type MainLayout = PropsWithChildren<{}>;
 const MainLayout: FC<MainLayout> = ({ children }) => {
     return (
         <>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={mainLayout.dateWrapper}>{children}</View>
-            </ScrollView>
+            <View style={{ flex: 1, height: "100%" }}>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ flexGrow: 1 }}>
+                    <View style={mainLayout.dateWrapper}>{children}</View>
+                </ScrollView>
+            </View>
             <Navbar />
         </>
     );
