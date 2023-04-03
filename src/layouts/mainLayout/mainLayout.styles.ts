@@ -1,4 +1,4 @@
-import { Dimensions, StatusBar, StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 import { COLORS, INDENT } from "../../constants/styles";
 
 export const mainLayout = StyleSheet.create({

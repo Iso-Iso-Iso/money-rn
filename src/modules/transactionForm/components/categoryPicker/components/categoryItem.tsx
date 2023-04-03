@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableWithoutFeedback, View } from "react-native";
 import { categoryItemStyles } from "./categoryItem.styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { COLORS } from "../../../../../constants/styles";
@@ -10,26 +10,29 @@ const CategoryItem: FC<CategoryItemProps> = ({
     name,
     iconName,
     iconSize = 35,
+    onClick,
 }) => {
     return (
-        <View style={categoryItemStyles.wrapper}>
-            <View
-                style={[
-                    categoryItemStyles.iconWrapper,
-                    isActive && categoryItemStyles.iconWrapperActive,
-                ]}>
-                <Icon
-                    name={iconName}
-                    size={iconSize}
-                    color={
-                        isActive
-                            ? COLORS.TEXT_COLOR_NEGATIVE
-                            : COLORS.BLUE_LIGHT
-                    }
-                />
+        <TouchableWithoutFeedback onPress={() => onClick(name)}>
+            <View style={categoryItemStyles.wrapper}>
+                <View
+                    style={[
+                        categoryItemStyles.iconWrapper,
+                        isActive && categoryItemStyles.iconWrapperActive,
+                    ]}>
+                    <Icon
+                        name={iconName}
+                        size={iconSize}
+                        color={
+                            isActive
+                                ? COLORS.TEXT_COLOR_NEGATIVE
+                                : COLORS.BLUE_LIGHT
+                        }
+                    />
+                </View>
+                <Text style={categoryItemStyles.text}>{name}</Text>
             </View>
-            <Text style={categoryItemStyles.text}>{name}</Text>
-        </View>
+        </TouchableWithoutFeedback>
     );
 };
 

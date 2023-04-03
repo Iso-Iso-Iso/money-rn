@@ -3,6 +3,9 @@ export interface CategoryItemProps {
     iconName: string;
     iconSize?: number;
     isActive?: boolean;
+    onClick: (name?: string) => void;
 }
 
-export type CategoriesConfig = Readonly<Omit<CategoryItemProps, "isActive">>[];
+export type CategoriesConfig = Readonly<
+    Omit<CategoryItemProps, "isActive" | "onClick">
+>[];

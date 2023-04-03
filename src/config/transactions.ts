@@ -10,3 +10,10 @@ export const LOSS_CATEGORIES_CONFIG: CategoriesConfig = [
     { iconName: "favorite", name: "health" },
     { iconName: "payments", name: "communal" },
 ];
+
+export const EARNINGS_CATEGORIES_CONFIG: CategoriesConfig = [
+    { iconName: "celebration", name: "Celebration" },
+    { iconName: "attractions", name: "Attractions" },
+    { iconName: "shopping-basket", name: "Products" },
+    { iconName: "checkroom", name: "Clothes" },
+];

@@ -11,9 +11,20 @@ import {
     EARNINGS_TRANSACTION_TYPE,
     LOSS_TRANSACTION_TYPE,
 } from "../../constants/transactions";
+import {
+    EARNINGS_CATEGORIES_CONFIG,
+    LOSS_CATEGORIES_CONFIG,
+} from "../../config/transactions";
 
 const TransactionForm = () => {
     const [isEarnings, setIsEarnings] = useState(false);
+
+    const [currentType, setCurrentType] = useState("");
+
+    const onTransactionTypeChange = () => {
+        setIsEarnings((prev) => !prev);
+        setCurrentType("");
+    };
 
     return (
         <View
@@ -33,13 +44,21 @@ const TransactionForm = () => {
                 </Text>
                 <Switch
                     value={isEarnings}
-                    onValueChange={setIsEarnings}
+                    onValueChange={onTransactionTypeChange}
                     color={COLORS.BLUE}
                 />
             </RowGroup>
             <InputGroup>
                 <InputHeader>Category:</InputHeader>
-                <CategoryPicker />
+                <CategoryPicker
+                    value={currentType}
+                    onCategoryChange={(val = "") => setCurrentType(val)}
+                    config={
+                        isEarnings
+                            ? EARNINGS_CATEGORIES_CONFIG
+                            : LOSS_CATEGORIES_CONFIG
+                    }
+                />
             </InputGroup>
             <Button
                 title={"Let's go"}

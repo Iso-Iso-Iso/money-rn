@@ -1,15 +1,30 @@
-import React from "react";
+import React, { FC } from "react";
 import { View } from "react-native";
 import CategoryItem from "./components/categoryItem";
 import { categoryPickerStyles } from "./categoryPicker.styles";
-import { LOSS_CATEGORIES_CONFIG } from "../../../../config/transactions";
+import {
+    EARNINGS_CATEGORIES_CONFIG,
+    LOSS_CATEGORIES_CONFIG,
+} from "../../../../config/transactions";
+import { CategoriesConfig } from "./types";
 
-const CategoryPicker = () => {
+interface CategoryPickerProps {
+    onCategoryChange(type?: string): void;
+    config: CategoriesConfig;
+    value: string;
+}
+
+const CategoryPicker: FC<CategoryPickerProps> = ({
+    onCategoryChange,
+    value,
+    config,
+}) => {
     return (
         <View style={categoryPickerStyles.grid}>
-            {LOSS_CATEGORIES_CONFIG.map(({ name, ...rest }) => (
+            {config.map(({ name, ...rest }) => (
                 <CategoryItem
-                    isActive={false}
+                    isActive={value === name}
+                    onClick={onCategoryChange}
                     name={name}
                     key={name}
                     {...rest}
