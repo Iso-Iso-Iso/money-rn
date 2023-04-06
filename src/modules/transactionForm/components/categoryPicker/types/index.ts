@@ -3,7 +3,7 @@ export interface CategoryItemProps {
     iconName: string;
     iconSize?: number;
     isActive?: boolean;
-    onClick: (name?: string) => void;
+    onClick: ((type: string) => void) | (() => void);
 }
 
 export type CategoriesConfig = Readonly<

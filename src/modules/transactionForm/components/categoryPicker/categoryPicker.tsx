@@ -9,7 +9,7 @@ import {
 import { CategoriesConfig } from "./types";
 
 interface CategoryPickerProps {
-    onCategoryChange(type?: string): void;
+    onCategoryChange: ((type: string) => void) | (() => void);
     config: CategoriesConfig;
     value: string;
 }
