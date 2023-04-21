@@ -8,7 +8,8 @@
             {
                 "singleQuote": false,
                 "bracketSpacing": true,
-                "arrowParens": "always"
+                "arrowParens": "always",
+                "bracketSameLine": false
             }
         ],
         "no-unused-vars": "warn",

@@ -3,4 +3,5 @@ export const PATH = {
     STATISTIC: "statistic",
     CREATE_TRANSACTION: "create-transaction",
     PROFILE: "profile",
+    EVENT_CALENDAR: "event-calendar",
 } as const;

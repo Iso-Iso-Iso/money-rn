@@ -6,6 +6,7 @@ import { COLORS } from "../../../constants/styles";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { PATH } from "../../../routes/constants/path";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useTypedNavigation } from "../../../hooks/useTypedNavigation";
 
 type Link = (typeof PATH)[keyof typeof PATH];
 
@@ -19,7 +20,7 @@ const NavigationButton: FC<NavigationButtonProps> = (props) => {
     const { iconName, name, link } = props;
     const route = useRoute();
 
-    const navigation = useNavigation<NativeStackNavigationProp<any>>();
+    const navigation = useTypedNavigation();
 
     const isActiveRoute = useMemo(
         () => link === route.name,
