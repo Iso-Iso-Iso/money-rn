@@ -54,7 +54,7 @@ const CalendarItem: FC<CalendarItemProps> = ({
                         calendarItemStyles.currentDateHighlight,
                 ]}
             >
-                {date.format("D/M")}
+                {date.format("D")}
             </Text>
         </View>
     );
