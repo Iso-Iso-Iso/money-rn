@@ -15,7 +15,7 @@ export const useCalendarMatrixView: UseCalendarMatrixView = (calendarDays) => {
             matrix[arrayIndex].push(el);
             return matrix;
         }, []);
-    }, []);
+    }, [calendarDays]);
 
     return matrixView;
 };

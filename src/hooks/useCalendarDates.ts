@@ -26,11 +26,11 @@ export const useCalendarDates: UseCalendarDates = (startPoint) => {
             );
         }
 
-        const lastDate = datesList[datesList.length - 1].isoWeekday();
-        let nextMonth = now.clone().add(1, "months");
+        const lastDateDayOfWeek = datesList[datesList.length - 1].isoWeekday();
+        const lastDay = datesList[datesList.length - 1];
 
-        for (let i = 1; i <= 7 - lastDate; i++) {
-            datesList.push(nextMonth.clone().add(i, "day"));
+        for (let i = 1; i <= 7 - lastDateDayOfWeek; i++) {
+            datesList.push(lastDay.clone().add(i, "day"));
         }
 
         if (datesList.length > 35) {
@@ -44,7 +44,7 @@ export const useCalendarDates: UseCalendarDates = (startPoint) => {
         }
 
         return datesList;
-    }, []);
+    }, [startPoint]);
 
     return calendarDates;
 };
