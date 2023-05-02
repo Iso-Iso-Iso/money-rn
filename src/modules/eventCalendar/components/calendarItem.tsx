@@ -56,6 +56,9 @@ const CalendarItem: FC<CalendarItemProps> = ({
             >
                 {date.format("D")}
             </Text>
+            <Text style={calendarItemStyles.date}>
+                {date.format("MMMM").substring(0, 3)}
+            </Text>
         </View>
     );
 };

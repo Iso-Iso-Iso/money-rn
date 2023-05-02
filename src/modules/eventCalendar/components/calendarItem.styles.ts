@@ -15,7 +15,7 @@ export const calendarItemStyles = create({
     date: {
         fontFamily: FONT_FAMILY,
         color: COLORS.GRAY,
-        fontSize: SIZING.H3,
+        fontSize: SIZING.H4,
     },
     currentDateHighlight: {
         color: COLORS.TEXT_COLOR_NEGATIVE,
